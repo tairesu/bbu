@@ -62,3 +62,9 @@ class Support(models.Model):
         return f'{self.business.name} gained a supporter'
 
         
+class BusinessImage(models.Model):
+    image = models.ImageField(upload_to='images/')
+    business = models.ForeignKey(Business, on_delete=models.CASCADE, related_name="images")
+    
+    def __str__(self):
+        return f"{self.business.name}'s Image"
