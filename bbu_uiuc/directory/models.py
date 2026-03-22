@@ -1,5 +1,7 @@
+from django.utils import timezone
 from django.db import models
 from django.core.validators import RegexValidator
+from django.db.models import UniqueConstraint
 
 
 class Category(models.Model):
@@ -44,3 +46,19 @@ class Business(models.Model):
 
     def __str__(self):
         return self.name
+
+    
+class Support(models.Model):
+    fingerprint = models.CharField(blank=False, max_length=64)
+    business = models.ForeignKey(Business, on_delete=models.CASCADE, related_name="supports")
+    date_created = models.DateTimeField(default=timezone.now, editable=False)
+    
+    class Meta:
+        constraints = [
+            UniqueConstraint(fields=["fingerprint","business"] ,name="unique_support")
+        ]
+
+    def __str__(self):
+        return f'{self.business.name} gained a supporter'
+
+        
