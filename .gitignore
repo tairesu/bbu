@@ -3,3 +3,4 @@ data/*
 db.sqlite3
 .venv-*/
 *.pyc
+media/
