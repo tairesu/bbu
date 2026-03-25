@@ -1,10 +1,86 @@
 {% load static %}
 <!doctype html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link href="{% static 'css/output.css'%}" rel="stylesheet" />
-  </head>
-  
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="{% static 'css/output.css'%}" rel="stylesheet" />
+</head>
+<body class="w-full h-full">
+  <nav class="w-full flex flex-row justify-between p-lg">
+    <div class="flex flex-row">
+      <img src="" alt="">
+      <span>BBUIUC</span>
+    </div>
+  </nav>
+  <section class="px-lg min-h-50vh">
+    {% block content%}
+
+    {% endblock %}
+  </section>
+  <footer class="px-base py-base flex flex-col gap-4xl bg-grey">
+    <!-- Footer Social Links -->
+    <div class="flex flex-row justify-between items-center">
+      <span class="w-[50px] h-[50px] bg-greninja">
+      </span><span class="w-[30px] h-[30px] bg-greninja"></span>
+    </div>
+    <!-- Featured Business Section -->
+    <div class="flex flex-col gap-2xl">
+      <p class="m-0 text-xl font-bold text-greninja">
+        <span class="text-greninja">Featured</span> 
+        <span class="text-[black]">Businesses</span>
+      </p>
+      <!-- Featured Business List-->
+      <div class="flex flex-row justify-between">
+        <div class="flex flex-col">
+          <p class="mb-2xs font-bold">Reese Sites</p>
+          <p class="text-sm">Custom Websites Built For Growth</p>
+          <p class="text-sm">32 people support this business</p>
+        </div>
+        <div class="bg-greninja aspect-square rounded-lg"></div>
+      </div>
+      <!-- Featured Business List-->
+      <div class="flex flex-row justify-between">
+        <div class="flex flex-col ">
+          <p class="mb-2xs font-bold">Reese Sites</p>
+          <p class="text-sm">Custom Websites Built For Growth</p>
+          <p class="text-sm">32 people support this business</p>
+        </div>
+        <div class="bg-greninja aspect-square rounded-lg"></div>
+      </div>
+      <!-- Featured Business List-->
+      <div class="flex flex-row justify-between">
+        <div class="flex flex-col">
+          <p class="mb-2xs font-bold">Reese Sites</p>
+          <p class="text-sm">Custom Websites Built For Growth</p>
+          <p class="text-sm">32 people support this business</p>
+        </div>
+        <div class="bg-greninja aspect-square rounded-lg"></div>
+      </div>
+    </div>
+    <!-- Link Trees -->
+    <div class="flex flex-row gap-3xl">
+      <!-- Resources Link Tree -->
+      <div class="flex flex-col gap-2xs items-start">
+        <p class="text-greninja font-bold mb-xs">Resources</p>
+        <button>About Us</button>
+        <button>Add a Business</button>
+        <button>Leave Feedback</button>
+        <button>Elevate Your Business</button>
+      </div>
+      <!-- Discover Link Tree -->
+      <div class="flex flex-col gap-2xs items-start">
+        <p class="text-greninja font-bold mb-xs">Discover</p>
+        <button>Hair</button>
+        <button>Cosmetology</button>
+        <button>Fashion</button>
+      </div>
+    </div>
+    <!-- copyright info -->
+    <div class="flex flex-col text-center gap-base">
+      <p>Made By Reese Sites</p>
+      <p>C 2026 BBUIUC. All Rights Reserved</p>
+    </div>
+  </footer>
+</body>
 </html>
