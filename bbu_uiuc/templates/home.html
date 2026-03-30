@@ -1,7 +1,22 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="flex flex-col justify-start">
-        <p>Find</p>
-    </div>
+    <!-- Hero Section-->
+    <section class="flex flex-col justify-start ">
+        <p class="uppercase text-3xl font-bold">Find</p>
+        <p class="uppercase text-[2.7rem] leading-none font-bold text-orange">Black-Owned</p>
+        <p class="uppercase text-3xl font-bold">Businesses @ UIUC</p>
+        <div class="flex flex-row border-b border-1 items-center relative mt-4">
+            <input type="text" class=" rounded-sm w-full p-4" placeholder="Search by name, category, or service"/>
+            <span class="w-[30px] h-[30px] bg-greninja absolute right-2"></span>
+        </div>
+    </section>
+    <!-- Featured Businesses-->
+     <section class="flex-flex-row overflow-x-auto my-3xl">
+        <p class="m-0 text-xl font-bold text-greninja">
+            <span class="text-greninja">Featured</span> 
+            <span class="text-[black]">Businesses</span>
+        </p>
+     </section>
+    
 {% endblock %}
