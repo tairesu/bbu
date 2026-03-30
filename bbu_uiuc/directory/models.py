@@ -69,11 +69,12 @@ class BusinessImage(models.Model):
     def __str__(self):
         return f"{self.business.name}'s Image"
 
+
 class Featured(models.Model):
-    business = models.ForeignKey(Business, on_delete=models.CASCADE, related_name="featured")
-    
+    business = models.OneToOneField(Business, on_delete=models.CASCADE, related_name="featured")
+
     class Meta:
         verbose_name_plural = "featured"
-
+        
     def __str__(self):
-        return f"[Featured]{self.business.name}"
+        return f"[Featured] {self.business.name}"
