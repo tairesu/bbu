@@ -1,10 +1,11 @@
 {% load static %}
+{% now "Y-m-d H:i" as tz %}
 <!doctype html>
 <html>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="{% static 'css/output.css'%}" rel="stylesheet" />
+  <link href="{% static 'css/output.css'%}?v={{tz}}" rel="stylesheet" />
 </head>
 <body class="w-full h-full">
   <nav class="w-full flex flex-row justify-between p-lg">
