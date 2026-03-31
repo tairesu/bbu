@@ -17,7 +17,7 @@ module.exports = {
         'xs': `${(1/1.23)/1.23}rem`,
         'sm': `${base*(scale^-1)}rem`,
         'base': `${base}rem`,
-        'lg': `${scale*(scale)}rem`,
+        'lg': `${1.5*(scale)}rem`,
         'xl': `${base*(scale^2)}rem`,
         '2xl': `${base*(scale^3)}rem`,
         '3xl': `${base*(scale^4)}rem`,
