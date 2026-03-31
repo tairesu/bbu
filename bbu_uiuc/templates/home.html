@@ -11,52 +11,30 @@
             <span class="w-[30px] h-[30px] bg-greninja absolute right-2"></span>
         </div>
     </section>
-    <p class="mb-lg text-xl font-bold text-greninja">
+    <p class="mb-lg text-2xl font-bold text-greninja">
             <span class="text-greninja">Featured</span> 
             <span class="text-[black]">Businesses</span>
     </p>
     <!-- Featured Businesses-->
      <section class="flex flex-row gap-base w-full overflow-x-auto scroll-smooth snap-x snap-mandatory">
-        <article class=" flex-shrink-0 w-11/12 flex flex-col snap-start snap-always">
+        <article class="flex-shrink-0 w-11/12 flex flex-col snap-start snap-always relative cursor-pointer">
+            <div class="w-full absolute top-0 left-0 flex flex-row justify-between p-4">
+                <span class="w-[35px] h-[35px] rounded-lg bg-grey"></span>
+                <span class="w-[35px] h-[35px] rounded-lg bg-grey"></span>
+            </div>
             <img src="" alt="" class="bg-greninja rounded-tl-xl rounded-tr-xl border aspect-square">
-            <div class="p-lg px-base border rounded-bl-xl rounded-br-xl">
-                <span class="text-base font-bold">Reese Sites</span>
-                <p class="mt-base">
+            <div class="p-lg px-base border rounded-bl-xl rounded-br-xl flex flex-col gap-base">
+                <span class="text-xl font-bold">Reese Sites</span>
+                <p class="text-base">
                     Custom Websites Built for Growth.
                     Integrated payments, dashboards,
                     and data tools that give your
                     business the digital infrastructure to
                     scale.
                 </p>
+                <span class="text-base font-bold text-greninja">32 community supporters</span>
             </div>
         </article>
-        <article class=" flex-shrink-0 w-11/12 flex flex-col snap-start snap-always">
-            <img src="" alt="" class="bg-greninja rounded-tl-xl rounded-tr-xl border aspect-square">
-            <div class="p-lg px-base border rounded-bl-xl rounded-br-xl">
-                <span class="text-base font-bold">Reese Sites</span>
-                <p class="mt-base">
-                    Custom Websites Built for Growth.
-                    Integrated payments, dashboards,
-                    and data tools that give your
-                    business the digital infrastructure to
-                    scale.
-                </p>
-            </div>
-        </article>
-        <article class=" flex-shrink-0 w-11/12 flex flex-col snap-start snap-always">
-            <img src="" alt="" class="bg-greninja rounded-tl-xl rounded-tr-xl border aspect-square">
-            <div class="p-lg px-base border rounded-bl-xl rounded-br-xl">
-                <span class="text-base font-bold">Reese Sites</span>
-                <p class="mt-base">
-                    Custom Websites Built for Growth.
-                    Integrated payments, dashboards,
-                    and data tools that give your
-                    business the digital infrastructure to
-                    scale.
-                </p>
-            </div>
-        </article>
-        
      </section>
     
 {% endblock %}
