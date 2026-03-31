@@ -1,4 +1,8 @@
 /** @type {import('tailwindcss').Config} */
+
+const base = 1;
+const scale = 1.23;
+
 module.exports = {
   content: ["./templates/**/*.html"],
   theme: {
@@ -11,19 +15,19 @@ module.exports = {
       spacing: {
         '2xs': `${(1/1.23)/1.23/1.23}rem`,
         'xs': `${(1/1.23)/1.23}rem`,
-        'sm': `${1/1.23}rem`,
-        'base': '1rem',
-        'lg': `1.23rem`,
-        'xl': `${1.23*2}rem`,
-        '2xl': `${1.23*3}rem`,
-        '3xl': `${1.23*4}rem`,
-        '4xl': `${1.23*5}rem`,
-        '5xl': `${1.23*6}rem`,
-        '6xl': `${1.23*7}rem`,
-        '7xl': `${1.23*8}rem`,
-        '8xl': `${1.23*9}rem`,
-        '9xl': `${1.23*10}rem`,
-        '10xl': `${1.23*11}rem`,
+        'sm': `${base*(scale^-1)}rem`,
+        'base': `${base}rem`,
+        'lg': `${scale*(scale)}rem`,
+        'xl': `${base*(scale^2)}rem`,
+        '2xl': `${base*(scale^3)}rem`,
+        '3xl': `${base*(scale^4)}rem`,
+        '4xl': `${base*(scale^5)}rem`,
+        '5xl': `${base*(scale^6)}rem`,
+        '6xl': `${base*(scale^7)}rem`,
+        '7xl': `${base*(scale^8)}rem`,
+        '8xl': `${base*(scale^9)}rem`,
+        '9xl': `${base*(scale^10)}rem`,
+        '10xl': `${base*(scale^11)}rem`,
         '50vh': '50vh',
       }
     },
