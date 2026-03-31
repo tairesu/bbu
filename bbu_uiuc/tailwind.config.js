@@ -10,6 +10,7 @@ module.exports = {
       colors: {
         'greninja': '#2ab6ca',
         'grey': '#f4f4f4',
+        'darkgrey': 'rgb(32, 32, 32)',
         'orange': '#e2642f',
         'lightorange': '#ff7935',
       },
