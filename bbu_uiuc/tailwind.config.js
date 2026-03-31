@@ -10,7 +10,8 @@ module.exports = {
       colors: {
         'greninja': '#2ab6ca',
         'grey': '#f4f4f4',
-        'orange': '#e2642f'
+        'orange': '#e2642f',
+        'lightorange': '#ff7935',
       },
       spacing: {
         '2xs': `${(1/1.23)/1.23/1.23}rem`,
