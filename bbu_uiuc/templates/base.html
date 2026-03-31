@@ -8,11 +8,12 @@
   <link href="{% static 'css/output.css'%}?v={{tz}}" rel="stylesheet" />
 </head>
 <body class="w-full h-full">
-  <nav class="w-full flex flex-row justify-between p-lg">
+  <nav class="w-full flex flex-row justify-between p-base">
     <div class="flex flex-row">
       <img src="" alt="">
-      <span>BBUIUC</span>
+      <span class="text-base font-bold">BBUIUC</span>
     </div>
+    <span class="w-[30px] h-[30px] bg-greninja"></span>
   </nav>
   <section class="px-base my-3xl w-dvw">
     {% block content%}
