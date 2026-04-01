@@ -12,7 +12,9 @@ module.exports = {
         'grey': '#f4f4f4',
         'darkgrey': 'rgb(32, 32, 32)',
         'orange': '#e2642f',
-        'lightorange': '#ff7935',
+        'lightorange': '#ff9967',
+        'black': '#3b4647',
+        'darkteal': '#007080'
       },
       spacing: {
         '2xs': `${(1/1.23)/1.23/1.23}rem`,

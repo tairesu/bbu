@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Set all body text to specified black */
+body {
+    c--tw-text-opacity: 1;
+    color: rgb(59 70 71 / var(--tw-text-opacity, 1));
+}
