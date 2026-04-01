@@ -8,23 +8,24 @@
   <link href="{% static 'css/output.css'%}?v={{tz}}" rel="stylesheet" />
 </head>
 <body class="w-full h-full">
-  <nav class="w-full flex flex-row justify-between p-base">
+  <nav class="w-full flex flex-row justify-between p-base lg:w-2/3 lg:m-auto">
     <div class="flex flex-row">
       <img src="" alt="">
       <span class="text-base font-bold">BBUIUC</span>
     </div>
     <!-- Nav Expand Icon-->
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5"  class="size-6 stroke-orange fill-transparent">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5"  class="md:hidden size-6 stroke-orange fill-transparent">
       <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
     </svg>
 
   </nav>
-  <section class="px-base my-3xl w-dvw">
+  <section class="px-base my-3xl w-dvw lg:w-2/3 lg:mx-auto">
     {% block content%}
 
     {% endblock %}
   </section>
-  <footer class="px-base py-lg flex flex-col gap-3xl bg-grey">
+  <footer class="bg-grey">
+    <div class="px-base py-lg flex flex-col gap-3xl lg:w-2/3 lg:mx-auto">
     <!-- Footer Social Links -->
     <div class="flex flex-row justify-between items-center">
       <span class="w-[50px] h-[50px] bg-greninja">
@@ -75,6 +76,9 @@
     <div class="flex flex-col text-center gap-base">
       <p>Made By Reese Sites</p>
       <p>C 2026 BBUIUC. All Rights Reserved</p>
+    </div>
+
+      
     </div>
   </footer>
 </body>
