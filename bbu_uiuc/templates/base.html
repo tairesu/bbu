@@ -7,9 +7,7 @@
 		<link href="{% static 'css/output.css'%}?v={{tz}}" rel="stylesheet" />
 	</head>
 	<body class="w-full h-full">
-		<nav
-			class="w-full flex flex-row justify-between items-end p-base md:w-11/12 lg:w-5/6 md:m-auto"
-		>
+		<nav class="w-full flex flex-row justify-between items-end p-base md:w-11/12 lg:w-5/6 md:m-auto">
 			<div class="flex flex-row">
 				<img src="" alt="" />
 				<span class="text-base md:text-lg font-bold">BBUIUC</span>
@@ -19,7 +17,7 @@
 				xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 0 24 24"
 				stroke-width="1.5"
-				class="md:hidden size-6 stroke-orange fill-transparent landscape:max-md:hidden"
+				class="md:hidden size-7 stroke-orange fill-transparent landscape:max-md:hidden"
 			>
 				<path
 					stroke-linecap="round"
@@ -29,11 +27,8 @@
 			</svg>
 			<!-- Nav Links (expanded in md+) -->
 			<div class="hidden md:flex md:flex-row landscape:max-md:flex">
-				<ul class="flex flex-row gap-lg">
-					<li><a href="" class="hover:underline hover:text-orange underline-offset-8 transition-all duration-200 hover:decoration-2">Leave Feedback</a></li>
-					<li><a href="" class="hover:underline hover:text-orange underline-offset-8 transition-all duration-200 hover:decoration-2">Add Business</a></li>
-					<li><a href="" class="hover:underline hover:text-orange underline-offset-8 transition-all duration-200 hover:decoration-2">Promote Your Business</a></li>
-					<li><a href="" class="hover:underline hover:text-orange underline-offset-8 transition-all duration-200 hover:decoration-2">About</a></li>
+				<ul class="flex flex-row gap-lg group">
+					{% include "navLinks.html" %}
 				</ul>
 			</div>
 			<div class="hidden md:flex md:flex-row landscape:max-md:flex">
@@ -58,6 +53,11 @@
 					</svg>
 			</div>
 		</nav>
+		<section class="bg-darkteal p-base">
+			<ul class="flex flex-wrap gap-2 group dropdown-ul"  style="row-gap:1.5rem">
+				{% include "navLinks.html" %}
+			</ul>
+		</section>
 		<main class="px-base my-3xl w-dvw md:w-11/12 lg:w-5/6 gap-5xl flex flex-col md:mx-auto landscape:max-md:mt-xl">
 			{% block content%} {% endblock %}
 		</main>
