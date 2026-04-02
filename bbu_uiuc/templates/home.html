@@ -97,13 +97,16 @@
         </div>
         
     </section>
-    <!-- BusinessList Section-->
-    <section>
+
+    <!-- BusinessListings Section-->
+    <section class="flex flex-col gap-[1.5rem]">
+
         <!-- Section Header-->
-        <h2 class="mb-[1.5rem] text-2xl font-bold text-greninja md:text-3xl">
+        <h2 class="text-2xl font-bold text-greninja md:text-3xl">
             <span class="text-black">Explore by</span>
             <span class="text-orange">Category</span> 
         </h2>
+
         <!-- Category Buttons-->
         <div class="flex flex-row gap-base w-full overflow-x-auto scroll-smooth snap-x snap-mandatory text-gray-500">
             <button class="rounded-xl py-1 px-[0.8rem] border-2 border-grey from-orange to-lightorange hover:bg-gradient-to-tr hover:text-white transition-all duration-300 hover:border-white text-base md:text-lg ">All</button>
@@ -113,12 +116,7 @@
             <button class="rounded-xl py-1 px-[0.8rem] border-2 border-grey from-orange to-lightorange hover:bg-gradient-to-tr hover:text-white transition-all duration-300 hover:border-white text-base md:text-lg ">All5</button>
             <button class="rounded-xl py-1 px-[0.8rem] border-2 border-grey from-orange to-lightorange hover:bg-gradient-to-tr hover:text-white transition-all duration-300 hover:border-white text-base md:text-lg ">All6</button>
         </div>
-        
-        <p class="my-2xl text-greninja">
-                <span class="text-black text-base md:text-lg">Showing</span> 
-                <span class="text-black text-lg font-bold">12</span>
-                <span class="text-black text-base md:text-lg">businesses</span>
-        </p>
+
         <!-- All Businesses-->
         <div class="flex flex-col gap-xl w-full md:grid md:grid-cols-[1fr_1fr] lg:grid-cols-[1fr_1fr_1fr]">
             <article class="w-full flex flex-col snap-start snap-always relative cursor-pointer">
@@ -184,5 +182,13 @@
                 </div>
             </article>
         </div>
+
+        <!-- Num Businesses-->
+        <p class=" text-greninja">
+            <span class="text-black text-base md:text-lg">Showing</span> 
+            <span class="text-black text-lg font-bold">12</span>
+            <span class="text-black text-base md:text-lg">businesses</span>
+        </p>
+
     </section>
 {% endblock %}
