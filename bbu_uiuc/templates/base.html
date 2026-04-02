@@ -7,57 +7,66 @@
 		<link href="{% static 'css/output.css'%}?v={{tz}}" rel="stylesheet" />
 	</head>
 	<body class="w-full h-full">
-		<nav class="w-full flex flex-row justify-between items-end p-base md:w-11/12 lg:w-5/6 md:m-auto">
-			<div class="flex flex-row">
-				<img src="" alt="" />
-				<span class="text-base md:text-lg font-bold">BBUIUC</span>
-			</div>
-			<!-- Nav Expand Icon-->
-			<svg
+		<nav class=" w-full flex flex-col p-base md:w-11/12 lg:w-5/6 md:m-auto">
+			<!-- Top section of Nav (displays content horizontal)-->
+			<div class="w-full flex flex-row justify-between items-end ">
+				<!-- Page Header and Logo-->
+				<div class="flex flex-row">
+					<img src="" alt="" />
+					<span class="text-base md:text-lg font-bold">BBUIUC</span>
+				</div>
+				<input type="checkbox" name="toggleNavDropdown" id="drop-nav">
+				<!-- Nav Expand Icon (mobile only)-->
+				<svg
 				xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 0 24 24"
 				stroke-width="1.5"
 				class="md:hidden size-7 stroke-orange fill-transparent landscape:max-md:hidden"
-			>
-				<path
+				>
+					<path
 					stroke-linecap="round"
-					stroke-linejoin="round"
-					d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-				/>
-			</svg>
-			<!-- Nav Links (expanded in md+) -->
-			<div class="hidden md:flex md:flex-row landscape:max-md:flex">
-				<ul class="flex flex-row gap-lg group">
+							stroke-linejoin="round"
+							d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+						/>
+				</svg>
+				<!-- Nav Links (md+ only) -->
+				<div class="hidden md:flex md:flex-row landscape:max-md:flex">
+					<ul class="flex flex-row gap-lg group">
+						{% include "navLinks.html" %}
+					</ul>
+				</div>
+				<div class="hidden md:flex md:flex-row landscape:max-md:flex">
+					<!-- Instagram Svg -->
+					<svg
+					viewBox="0 0 256 256"
+					id="Flat"
+					class="fill-orange w-[30px] h-[30px]"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+							<g
+								id="SVGRepo_tracerCarrier"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							></g>
+							<g id="SVGRepo_iconCarrier">
+								<path
+									d="M160,128a32,32,0,1,1-32-32A32.03667,32.03667,0,0,1,160,128Zm68-44v88a56.06353,56.06353,0,0,1-56,56H84a56.06353,56.06353,0,0,1-56-56V84A56.06353,56.06353,0,0,1,84,28h88A56.06353,56.06353,0,0,1,228,84Zm-52,44a48,48,0,1,0-48,48A48.05436,48.05436,0,0,0,176,128Zm16-52a12,12,0,1,0-12,12A12,12,0,0,0,192,76Z"
+								></path>
+							</g>
+						</svg>
+					</div>
+				</div>
+			
+			</div>
+			<!-- Nav Dropdown (mobile only) -->
+			<div class=" p-base block landscape:hidden dropdown">
+				<ul class="flex flex-wrap gap-2 group dropdown-ul"  style="row-gap:1.5rem">
 					{% include "navLinks.html" %}
 				</ul>
 			</div>
-			<div class="hidden md:flex md:flex-row landscape:max-md:flex">
-				<!-- Instagram Svg -->
-					<svg
-						viewBox="0 0 256 256"
-						id="Flat"
-						class="fill-orange w-[30px] h-[30px]"
-						xmlns="http://www.w3.org/2000/svg"
-					>
-						<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-						<g
-							id="SVGRepo_tracerCarrier"
-							stroke-linecap="round"
-							stroke-linejoin="round"
-						></g>
-						<g id="SVGRepo_iconCarrier">
-							<path
-								d="M160,128a32,32,0,1,1-32-32A32.03667,32.03667,0,0,1,160,128Zm68-44v88a56.06353,56.06353,0,0,1-56,56H84a56.06353,56.06353,0,0,1-56-56V84A56.06353,56.06353,0,0,1,84,28h88A56.06353,56.06353,0,0,1,228,84Zm-52,44a48,48,0,1,0-48,48A48.05436,48.05436,0,0,0,176,128Zm16-52a12,12,0,1,0-12,12A12,12,0,0,0,192,76Z"
-							></path>
-						</g>
-					</svg>
-			</div>
 		</nav>
-		<section class="bg-darkteal p-base">
-			<ul class="flex flex-wrap gap-2 group dropdown-ul"  style="row-gap:1.5rem">
-				{% include "navLinks.html" %}
-			</ul>
-		</section>
+		
 		<main class="px-base my-3xl w-dvw md:w-11/12 lg:w-5/6 gap-5xl flex flex-col md:mx-auto landscape:max-md:mt-xl">
 			{% block content%} {% endblock %}
 		</main>
