@@ -2,12 +2,16 @@
 
 {% block content %}
     <!-- Hero Section-->
-    <section class="flex flex-col justify-start mb-3xl gap-1">
-        <p class="uppercase text-3xl font-bold">Find</p>
-        <p style="text-shadow: 30px 10px 60px white" class="uppercase text-[2.8rem] leading-none font-bold bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] bg-clip-text text-transparent from-orange to-lightorange text">Black-Owned</p>
-        <p class="uppercase text-3xl font-bold">Businesses @ UIUC</p>
-        <div class="flex flex-row border-b border-1 items-center relative mt-[2.2rem]">
-            <input type="text" class=" rounded-sm w-full p-4" placeholder="Search by name, category, or service"/>
+    <section class="flex flex-col justify-start mb-3xl  md:gap-3">
+        <!-- Wrapper for hero text elements -->
+        <div class="flex flex-col justify-start gap-1 md:justify-center">
+            <!-- Hero Text Elements-->
+            <p class="uppercase text-3xl font-bold md:text-4xl md:text-center" >Find</p>
+            <p style="text-shadow: 30px 10px 60px white" class="uppercase text-[2.7rem] md:text-6xl md:text-center leading-none font-bold bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] bg-clip-text text-transparent from-orange to-lightorange ">Black-Owned</p>
+            <p class="uppercase text-3xl font-bold md:text-4xl md:text-center">Businesses @ UIUC</p>
+        </div>
+        <div class="flex flex-row border-b border-1 items-center relative mt-[2.2rem] md:w-3/4 md:mx-auto">
+            <input type="text" class=" rounded-sm  w-full p-4 md:bg-grey " placeholder="Search by name, category, or service"/>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  class="size-6 absolute right-2 fill-greninja">
                 <path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z" clip-rule="evenodd" />
             </svg>
@@ -18,8 +22,54 @@
             <span class="text-black">Businesses</span>
     </p>
     <!-- Featured Businesses-->
-     <section class="flex flex-row gap-base w-full overflow-x-auto scroll-smooth snap-x snap-mandatory md:grid md:grid-cols-[1fr_1fr] lg:grid-cols-[1fr_1fr_1fr]">
-        <article class="flex-shrink-0 w-11/12 flex flex-col snap-start snap-always relative cursor-pointer">
+     <section class="flex flex-row gap-base w-full overflow-x-auto scroll-smooth snap-x snap-mandatory md:overflow-hidden md:grid md:gap-lg md:grid-cols-[1fr_1fr] lg:grid-cols-[1fr_1fr_1fr]">
+        <article class="flex-shrink-0 w-11/12 flex flex-col snap-start snap-always relative cursor-pointer md:w-full">
+            <div class="w-full absolute top-0 left-0 flex flex-row justify-end p-4">
+                <span class="p-2 rounded-lg text-greninja bg-grey"> 
+                    <!-- Heart Svg-->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="size-6 fill-transparent stroke-greninja stroke-2">
+                        <path d="m11.645 20.91-.007-.003-.022-.012a15.247 15.247 0 0 1-.383-.218 25.18 25.18 0 0 1-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0 1 12 5.052 5.5 5.5 0 0 1 16.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 0 1-4.244 3.17 15.247 15.247 0 0 1-.383.219l-.022.012-.007.004-.003.001a.752.752 0 0 1-.704 0l-.003-.001Z" />
+                    </svg>
+
+                </span>
+            </div>
+            <img src="" alt="" class="bg-greninja rounded-tl-xl rounded-tr-xl border aspect-square">
+            <div class="p-lg px-base border rounded-bl-xl rounded-br-xl flex flex-col gap-base">
+                <span class="text-xl font-bold">Reese Sites</span>
+                <p class="text-base">
+                    Custom Websites Built for Growth.
+                    Integrated payments, dashboards,
+                    and data tools that give your
+                    business the digital infrastructure to
+                    scale.
+                </p>
+                <span class="text-base font-bold text-greninja">32 community supporters</span>
+            </div>
+        </article>
+        <article class="flex-shrink-0 w-11/12 flex flex-col snap-start snap-always relative cursor-pointer md:w-full">
+            <div class="w-full absolute top-0 left-0 flex flex-row justify-end p-4">
+                <span class="p-2 rounded-lg text-greninja bg-grey"> 
+                    <!-- Heart Svg-->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="size-6 fill-transparent stroke-greninja stroke-2">
+                        <path d="m11.645 20.91-.007-.003-.022-.012a15.247 15.247 0 0 1-.383-.218 25.18 25.18 0 0 1-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0 1 12 5.052 5.5 5.5 0 0 1 16.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 0 1-4.244 3.17 15.247 15.247 0 0 1-.383.219l-.022.012-.007.004-.003.001a.752.752 0 0 1-.704 0l-.003-.001Z" />
+                    </svg>
+
+                </span>
+            </div>
+            <img src="" alt="" class="bg-greninja rounded-tl-xl rounded-tr-xl border aspect-square">
+            <div class="p-lg px-base border rounded-bl-xl rounded-br-xl flex flex-col gap-base">
+                <span class="text-xl font-bold">Reese Sites</span>
+                <p class="text-base">
+                    Custom Websites Built for Growth.
+                    Integrated payments, dashboards,
+                    and data tools that give your
+                    business the digital infrastructure to
+                    scale.
+                </p>
+                <span class="text-base font-bold text-greninja">32 community supporters</span>
+            </div>
+        </article>
+        <article class="flex-shrink-0 w-11/12 flex flex-col snap-start snap-always relative cursor-pointer md:w-full">
             <div class="w-full absolute top-0 left-0 flex flex-row justify-end p-4">
                 <span class="p-2 rounded-lg text-greninja bg-grey"> 
                     <!-- Heart Svg-->
