@@ -7,15 +7,16 @@
 		<link href="{% static 'css/output.css'%}?v={{tz}}" rel="stylesheet" />
 	</head>
 	<body class="w-full h-full">
-		<nav class="group has-[:checked]:bg-orange w-full flex flex-col p-base md:w-11/12 lg:w-5/6 md:m-auto">
+		<nav class="group has-[:checked]:bg-orange w-full flex flex-col p-base md:w-11/12 lg:w-5/6 md:m-auto gap-base">
 			<!-- Top section of Nav (displays content horizontal)-->
-			<div class="w-full flex flex-row justify-between items-end  ">
+			<div class="w-full flex flex-row justify-between items-end z-50 ">
 				<!-- Page Header and Logo-->
 				<div class="flex flex-row group-has-[:checked]:text-white">
 					<img src="" alt="" />
 					<span class="text-base md:text-lg font-bold">BBUIUC</span>
 				</div>
-				<label for="drop-nav">
+				<!-- Checkbox Triggering w/ expand icon (mobile only)-->
+				<label for="drop-nav" class="landscape:hidden">
 					<input type="checkbox" class="peer hidden" name="toggleNavDropdown" id="drop-nav">
 					<!-- Nav Expand Icon (mobile only)-->
 					<svg
@@ -62,7 +63,7 @@
 			
 			</div>
 			<!-- Nav Dropdown (mobile only) -->
-			<div class=" hidden group-has-[:checked]:block p-base landscape:hidden dropdown">
+			<div class=" hidden group-has-[:checked]:block py-base landscape:hidden dropdown z-40">
 				<ul class="flex flex-wrap gap-2 group dropdown-ul"  style="row-gap:1.5rem">
 					{% include "navLinks.html" %}
 				</ul>
