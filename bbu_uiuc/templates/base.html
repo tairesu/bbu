@@ -43,18 +43,19 @@
 				<!-- LG wrapper for featured and link trees -->
 				<div class="flex flex-col gap-3xl md:flex-row md:justify-between landscape:max-md:flex-row landscape:max-md:justify-between ">
 					<!-- Featured Business Section -->
-					<div class="flex flex-col gap-lg">
+					<div class="flex flex-col  gap-lg w-full md:max-w-[44vw] md:items-start">
 						<p class="m-0 text-xl md:text-2xl font-bold text-greninja">
 							<span class="text-greninja">Featured</span>
 							<span class="text-[black]">Businesses</span>
 						</p>
 						{% for business in featured_business_list %}
 							<!-- Featured Business List-->
-							<div class="flex flex-row justify-between md:flex-row-reverse lg:justify-normal md:gap-4 landscape:max-md:flex-row-reverse">
+							<div class=" flex flex-row items-center md:items-start justify-between md:flex-row-reverse md:justify-start md:gap-4 ">
 								<div class="flex flex-col">
 									<p class="mb-2xs font-bold md:text-lg">{{ business.name|title }}</p>
-									<p class="text-sm md:text-base">
-										{{ business.headline|title }}
+									<p class="text-sm md:text-base w-3/4 md:w-full lg:w-3/5">
+										{% comment %} {{ business.headline|title }} {% endcomment %}
+										{% lorem 15 w random %}
 									</p>
 									<p class="text-sm text-greninja font-bold"></p>
 								</div>
