@@ -16,5 +16,5 @@ class CategoryContextMixin(ContextMixin):
 class FeaturedBusinessListContextMixin(ContextMixin):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['featured_business_list'] = Featured.objects.all()
+        context['featured_business_list'] = [ feature.business for feature in Featured.objects.all() ]
         return context
