@@ -14,10 +14,12 @@ Including another URLconf
 
 from django.urls import path
 from directory.views import (
-    LandingPageView
+    LandingPageView,
+    AboutView,
 )
 urlpatterns = [
-    path('', LandingPageView.as_view(), name="home_urlpattern")
+    path('', LandingPageView.as_view(), name="home_urlpattern"),
+    path('about/', AboutView.as_view(), name="about_urlpattern")
 ]
 
 

@@ -7,6 +7,10 @@ from bbu_uiuc.utils.plugins import (
     FeaturedBusinessListContextMixin
 )
 
-# Create your views here.
-class LandingPageView(TemplateView , FeaturedBusinessListContextMixin, CategoryContextMixin):
+
+class LandingPageView(TemplateView, FeaturedBusinessListContextMixin, CategoryContextMixin):
     template_name = 'home.html'
+
+
+class AboutView(TemplateView, FeaturedBusinessListContextMixin, CategoryContextMixin):
+    template_name = 'about.html'
