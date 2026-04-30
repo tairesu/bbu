@@ -2,10 +2,10 @@
 	<!-- Top section of Nav (displays content horizontal)-->
 	<div class="w-full flex flex-row justify-between items-end z-50  *:duration-500">
 		<!-- Page Header and Logo-->
-		<div class="flex flex-row group-has-[:checked]:portrait:text-white">
+		<a href="{% url 'home_urlpattern' %}" class="flex flex-row group-has-[:checked]:portrait:text-white">
 			<img src="" alt="" />
 			<span class="text-base md:text-lg font-bold">BBUIUC</span>
-		</div>
+		</a>
 		<!-- Checkbox Triggering w/ expand icon (mobile only)-->
 		<label for="drop-nav" class="landscape:hidden">
 			<input type="checkbox" class="peer hidden" name="toggleNavDropdown" id="drop-nav">
