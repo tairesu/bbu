@@ -14,3 +14,7 @@ class LandingPageView(TemplateView, FeaturedBusinessListContextMixin, CategoryCo
 
 class AboutView(TemplateView, FeaturedBusinessListContextMixin, CategoryContextMixin):
     template_name = 'about.html'
+
+
+class BusinessCreateView(TemplateView, FeaturedBusinessListContextMixin, CategoryContextMixin):
+    template_name = 'business_create.html'

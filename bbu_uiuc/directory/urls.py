@@ -16,9 +16,11 @@ from django.urls import path
 from directory.views import (
     LandingPageView,
     AboutView,
+    BusinessCreateView,
 )
 urlpatterns = [
     path('', LandingPageView.as_view(), name="home_urlpattern"),
+    path('business/new', BusinessCreateView.as_view(), name="new_business_urlpattern"),
     path('about/', AboutView.as_view(), name="about_urlpattern")
 ]
 

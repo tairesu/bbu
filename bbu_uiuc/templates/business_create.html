@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% now "Y-m-d H:i" as tz %}
+{% block content %}
+    <!-- Add Business Section-->
+    <section class=" gap-9 flex flex-col justify-start landscape:max-md:mt-[0]">
+         <!-- Header -->
+        <h2 class="text-3xl font-bold text-greninja md:text-3xl *:capitalize leading-12">
+            <span class="text-black">Add </span>
+            <span class="text-orange">Your Business</span> 
+        </h2>
+        <!-- Div for custom Gapping-->
+        <div class="flex flex-col gap-4">
+            <p class="leading-7 text-lg">
+                The idea for the platform began inside a student
+                GroupMe called “The BlackSideIllini” (created by
+                Starr & Daniel) where students shared resources,
+                asked questions, and helped each other find
+                services around campus.
+            </p>
+        </div>
+
+        <!-- Form Progress Indicator-->
+        <div class="flex gap-2">
+            <span class="w-full h-5 bg-grey"></span>
+            <span class="w-full h-5 bg-grey"></span>
+            <span class="w-full h-5 bg-grey"></span>
+        </div>
+
+        <button href="#" class="rounded-xl flex justify-center items-center  p-4 border-2 border-grey from-orange to-lightorange bg-gradient-to-tr text-white group transition-all duration-200 hover:border-white text-base md:text-lg font-bold ">
+        Continue              
+        </button>
+    </section>
+{% endblock %}
