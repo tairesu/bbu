@@ -1,0 +1,36 @@
+<!-- Header -->
+<h2 class="text-3xl font-bold text-greninja md:text-3xl *:capitalize leading-12">
+    <span class="text-black">Final  </span>
+    <span class="text-orange">Details</span> 
+</h2>
+<!-- Div for custom Gapping-->
+<p class="leading-7 text-lg">
+    Add the finishing touches so we can review and
+    publish your listing.
+</p>
+<!-- Form Progress Indicator-->
+<div class="flex gap-2 mb-2">
+    <span class="w-full h-3 bg-greninja"></span>
+    <span class="w-full h-3 bg-greninja"></span>
+    <span class="w-full h-3 bg-greninja"></span>
+    <span class="w-full h-3 bg-grey"></span>
+</div>
+<form action="" method="POST" class="flex flex-col gap-6 ">
+    {% csrf_token %}
+    <label for="logo" class="flex flex-col gap-2">
+        <span class="after:content-['*'] after:ml-1 after:text-orange relative ">Upload a Logo </span>
+        <input type="file" id="logo" name="logo" class="p-4 bg-grey rounded-xl" placeholder="Upload Logo" required>
+    </label>
+     <label for="work_photos" class="flex flex-col gap-2">
+        <span class="after:content-['*'] after:ml-1 after:text-orange relative ">Upload Photos of your Work </span>
+        <input type="file" id="work_photos" name="work_photos" class="p-4 bg-grey rounded-xl" placeholder="Upload Logo" required>
+    </label>
+    <div class="flex gap-4">
+        <button data-target="ff0o2rxm12h729huniok" class="mt-4 rounded-xl flex justify-center items-center  p-4 py-6 border-2 border-grey text-grey transition-all duration-200 hover:border-white text-base md:text-lg font-bold ">
+            Go Back              
+        </button>
+        <button type="submit" class="mt-4 rounded-xl flex justify-center items-center  p-4 py-6 border-2 border-grey from-darkteal to-greninja bg-gradient-to-tr text-white group transition-all duration-200 hover:border-white text-base md:text-lg font-bold ">
+            Join BBUIUC           
+        </button>    
+     </div>
+</form>

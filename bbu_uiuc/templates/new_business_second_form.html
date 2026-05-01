@@ -1,0 +1,49 @@
+<!-- Header -->
+<h2 class="text-3xl font-bold text-greninja md:text-3xl *:capitalize leading-12">
+    <span class="text-black">Business  </span>
+    <span class="text-orange">Details</span> 
+</h2>
+<!-- Div for custom Gapping-->
+<p class="leading-7 text-lg">
+    Tell us a little about your business so students
+    can find and learn about what you offer
+</p>
+<!-- Form Progress Indicator-->
+<div class="flex gap-2 mb-2">
+    <span class="w-full h-3 bg-greninja"></span>
+    <span class="w-full h-3 bg-greninja"></span>
+    <span class="w-full h-3 bg-grey"></span>
+    <span class="w-full h-3 bg-grey"></span>
+</div>
+<form action="" method="POST" class="flex flex-col gap-6 ">
+    {% csrf_token %}
+    <label for="name" class="flex flex-col gap-2">
+        <span class="after:content-['*'] after:ml-1 after:text-orange relative ">Email </span>
+        <input type="text" id="name" name="name" class="p-4 bg-grey rounded-xl" placeholder="What email should we show customers?" required>
+    </label>
+    <label for="cell" class="flex flex-col gap-2">
+        <span>Cell</span>
+        <input type="tel" name="cell" id="cell" class="p-4 bg-grey rounded-xl" placeholder="What number can customers reach you?">
+    </label>
+    <label for="address" class="flex flex-col gap-2">
+        <span>Business Address</span>
+        <input type="text" name="address" autocomplete="street_address" id="address" class="p-4 bg-grey rounded-xl" placeholder="What number can customers reach you?">
+    </label>
+    <label for="address" class="flex flex-col gap-2">
+        <span>Website</span>
+        <input type="url" name="website" autocomplete="street_address" id="website" class="p-4 bg-grey rounded-xl" placeholder="What URL should we send customers to?">
+    </label>
+    <label for="instagram" class="flex flex-col gap-2">
+        <span class="">Instagram</span>
+        <input type="url" name="website" autocomplete="street_address" id="website" class="p-4 bg-grey rounded-xl" placeholder="What IG account should we show customers?">
+    </label>
+    <div class="flex gap-4 *:flex-grow">
+        <button data-target="8fhonr9mj1pf8p23h9" class="mt-4 rounded-xl flex justify-center items-center  p-4 py-6 border-2 border-grey text-grey transition-all duration-200 hover:border-white text-base md:text-lg font-bold ">
+            Go Back              
+        </button>
+        <button type="submit" class="mt-4 rounded-xl flex justify-center items-center  p-4 py-6 border-2 border-grey from-darkteal to-greninja bg-gradient-to-tr text-white group transition-all duration-200 hover:border-white text-base md:text-lg font-bold ">
+            Continue              
+        </button>
+    </div>
+       
+</form>
