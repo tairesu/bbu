@@ -23,13 +23,16 @@ class BusinessCreateView(TemplateView, FeaturedBusinessListContextMixin, Categor
     active_form = 'new_business_first_form.html'
 
     def check_fields(self, post_data)-> tuple:
-        print(f"Post Data we see:{post_data} \n")
-        # The name and description fields of the first form are required
-        if len(post_data['name']) < 2 or len(post_data['description']) < 10:
-            return (False, "Name and Description Fields are required")
-        # The name must be unique
-        if Business.objects.filter(name=post_data['name']).exists():
-            return (False, "Name Already Exists")
+        if 'name' in post_data.keys() and 'description' in post_data.keys():
+            print(f"First Form Post:{post_data} \n")
+            # The name and description fields of the first form are required
+            if len(post_data['name']) < 2 or len(post_data['description']) < 10:
+                return (False, "Name and Description Fields are required")
+            # The name must be unique
+            if Business.objects.filter(name=post_data['name']).exists():
+                return (False, "Name Already Exists")
+        elif 'email' in post_data.keys():
+            print(f"Second Form: {post_data} \n")
         return (True, "OK")
     
     def get_context_data(self, **kwargs):
@@ -42,7 +45,7 @@ class BusinessCreateView(TemplateView, FeaturedBusinessListContextMixin, Categor
         context_data = self.get_context_data(**kwargs)
         context_data.update(data_dict)
         return context_data
-    
+       
     def get(self, request, *args, **kwargs):
         return render(request, self.template_name, self.get_context_data(**kwargs))
     
@@ -53,7 +56,17 @@ class BusinessCreateView(TemplateView, FeaturedBusinessListContextMixin, Categor
         form_success, msg = self.check_fields(request.POST)
         if not form_success:
             return render(request, self.template_name, self.update_context_data({'given_name': request.POST.get('name'), 'given_desciption': request.POST.get('description'), 'form_errors': msg}))
+        #Go on to form 2
+        return self.move_to_next_form(request, request.POST)
 
+    def move_to_next_form(self, request, post_data):
+        print("Move_to_next_form Post_data Keys: ", post_data.keys())
+        if 'name' in post_data.keys():
+            self.active_form = 'new_business_second_form.html'
+        elif 'email' in post_data.keys():
+            self.active_form = 'new_business_third_form.html'
+        return render(request, self.template_name, self.get_context_data())
+        
 
 
 
