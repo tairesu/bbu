@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.views import View
 from django.views.generic import (
     TemplateView,
 )
@@ -6,6 +7,7 @@ from bbu_uiuc.utils.plugins import (
     CategoryContextMixin,
     FeaturedBusinessListContextMixin
 )
+from directory.models import Business
 
 
 class LandingPageView(TemplateView, FeaturedBusinessListContextMixin, CategoryContextMixin):
@@ -18,3 +20,40 @@ class AboutView(TemplateView, FeaturedBusinessListContextMixin, CategoryContextM
 
 class BusinessCreateView(TemplateView, FeaturedBusinessListContextMixin, CategoryContextMixin):
     template_name = 'business_create.html'
+    active_form = 'new_business_first_form.html'
+
+    def check_fields(self, post_data)-> tuple:
+        print(f"Post Data we see:{post_data} \n")
+        # The name and description fields of the first form are required
+        if len(post_data['name']) < 2 or len(post_data['description'] < 10):
+            return (False, "Name and Description Fields are required")
+        # The name must be unique
+        if Business.objects.exists(name=post_data['name']):
+            return (False, "Name Already Exists")
+        return (True, "OK")
+    
+    def get_context_data(self, **kwargs):
+        print("Looks Like we have these kwargs at get_context_data" , kwargs)
+        context_data = super().get_context_data(**kwargs)
+        context_data['active_form'] = self.active_form
+        return context_data
+    
+    def update_context_data(self,data_dict, **kwargs):
+        context_data = self.get_context_data(**kwargs)
+        context_data.update(data_dict)
+        return context_data
+    
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template_name, self.get_context_data(**kwargs))
+    
+    def post(self, request, *args, **kwargs):
+        print(f"Welcome to the Business Create Space. \n ")
+        print(f"Args Passed: {args}\n")
+        print(f"Args Passed: {kwargs}\n")
+        form_success, msg = self.check_fields(request.POST)
+        if not form_success:
+            return render(request, self.template_name, self.update_context_data({'given_name': request.POST.get('name'), 'given_desciption': request.POST.get('description'), 'form_errors': msg}))
+
+
+
+
