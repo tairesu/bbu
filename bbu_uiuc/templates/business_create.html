@@ -2,32 +2,36 @@
 {% now "Y-m-d H:i" as tz %}
 {% block content %}
     <!-- Add Business Section-->
-    <section class=" gap-9 flex flex-col justify-start landscape:max-md:mt-[0]">
+    <section class=" gap-8 flex flex-col justify-start landscape:max-md:mt-[0]">
          <!-- Header -->
         <h2 class="text-3xl font-bold text-greninja md:text-3xl *:capitalize leading-12">
             <span class="text-black">Add </span>
             <span class="text-orange">Your Business</span> 
         </h2>
         <!-- Div for custom Gapping-->
-        <div class="flex flex-col gap-4">
-            <p class="leading-7 text-lg">
-                The idea for the platform began inside a student
-                GroupMe called “The BlackSideIllini” (created by
-                Starr & Daniel) where students shared resources,
-                asked questions, and helped each other find
-                services around campus.
-            </p>
-        </div>
-
+        <p class="leading-7 text-lg">
+            All businesses can be listed on the platform for
+            free. Fill out this quick form to get started.
+        </p>
         <!-- Form Progress Indicator-->
-        <div class="flex gap-2">
-            <span class="w-full h-5 bg-grey"></span>
-            <span class="w-full h-5 bg-grey"></span>
-            <span class="w-full h-5 bg-grey"></span>
+        <div class="flex gap-2 mb-2">
+            <span class="w-full h-3 bg-greninja"></span>
+            <span class="w-full h-3 bg-grey"></span>
+            <span class="w-full h-3 bg-grey"></span>
         </div>
+        <form action="" method="POST" class="flex flex-col gap-6 ">
+            <label for="name" class="flex flex-col gap-2">
+                <span class="after:content-['*'] after:ml-1 after:text-orange relative ">Business Name</span>
+                <input type="text" id="name" name="name" class="p-4 bg-grey rounded-xl" placeholder="What's the name of your business?">
+            </label>
+            <label for="description" class="flex flex-col gap-2">
+                <span class="after:content-['*'] after:ml-1 after:text-orange relative ">Short Bio</span>
+                <textarea name="description" id="description" class="p-4 bg-grey rounded-xl" placeholder="Briefly tell us about your business"></textarea>
+            </label>
+            <button type="submit" href="#" class="mt-4 rounded-xl flex justify-center items-center  p-4 py-6 border-2 border-grey from-darkteal to-greninja bg-gradient-to-tr text-white group transition-all duration-200 hover:border-white text-base md:text-lg font-bold ">
+            Continue              
+            </button>
+        </form>
 
-        <button href="#" class="rounded-xl flex justify-center items-center  p-4 border-2 border-grey from-orange to-lightorange bg-gradient-to-tr text-white group transition-all duration-200 hover:border-white text-base md:text-lg font-bold ">
-        Continue              
-        </button>
     </section>
 {% endblock %}
