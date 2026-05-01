@@ -25,10 +25,10 @@ class BusinessCreateView(TemplateView, FeaturedBusinessListContextMixin, Categor
     def check_fields(self, post_data)-> tuple:
         print(f"Post Data we see:{post_data} \n")
         # The name and description fields of the first form are required
-        if len(post_data['name']) < 2 or len(post_data['description'] < 10):
+        if len(post_data['name']) < 2 or len(post_data['description']) < 10:
             return (False, "Name and Description Fields are required")
         # The name must be unique
-        if Business.objects.exists(name=post_data['name']):
+        if Business.objects.filter(name=post_data['name']).exists():
             return (False, "Name Already Exists")
         return (True, "OK")
     
