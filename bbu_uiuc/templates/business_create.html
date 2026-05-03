@@ -3,7 +3,22 @@
 {% block content %}
     <!-- Add Business Section-->
     <section class=" gap-8 flex flex-col justify-start landscape:max-md:mt-[0]">
-        
+        <!-- Header -->
+        <h2 class="text-3xl font-bold text-greninja md:text-3xl *:capitalize leading-12">
+            <span class="text-black">Add </span>
+            <span class="text-orange">Your Business</span> 
+        </h2>
+        <p class="leading-7 text-lg">
+            All businesses can be listed on the platform for
+            free. Fill out this quick form to get started.
+        </p>
+        {% comment %} <!-- Form Progress Indicator-->
+        <div class="flex gap-2 mb-2">
+            <span class="w-full h-3 bg-greninja"></span>
+            <span class="w-full h-3 bg-grey"></span>
+            <span class="w-full h-3 bg-grey"></span>
+            <span class="w-full h-3 bg-grey"></span>
+        </div> {% endcomment %}
         <form action="" method="POST" class="flex flex-col gap-6 ">
             {% csrf_token %}
             {{ form }}
