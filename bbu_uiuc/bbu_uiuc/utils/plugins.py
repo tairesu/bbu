@@ -4,17 +4,10 @@ from directory.models import (
     Featured,
 )
 
-
-# Provides List of Categories to Views
-class CategoryContextMixin(ContextMixin):
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['category_list'] = Category.objects.all()
-        return context
-
 # Provides List of Featured Businesses to Views
-class FeaturedBusinessListContextMixin(ContextMixin):
+class FooterContextMixin(ContextMixin):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['featured_business_list'] = [ feature.business for feature in Featured.objects.all() ]
+        context['category_list'] = Category.objects.all()
         return context

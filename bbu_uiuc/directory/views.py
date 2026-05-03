@@ -10,21 +10,20 @@ from directory.forms import (
     NewBusinessForm
 )
 from bbu_uiuc.utils.plugins import (
-    CategoryContextMixin,
-    FeaturedBusinessListContextMixin
+    FooterContextMixin,
 )
 from directory.models import Business
 
 
-class LandingPageView(TemplateView, FeaturedBusinessListContextMixin, CategoryContextMixin):
+class LandingPageView(TemplateView, FooterContextMixin):
     template_name = 'home.html'
 
 
-class AboutView(TemplateView, FeaturedBusinessListContextMixin, CategoryContextMixin):
+class AboutView(TemplateView, FooterContextMixin):
     template_name = 'about.html'
 
 
-class BusinessCreateView(CreateView, FeaturedBusinessListContextMixin, CategoryContextMixin):
+class BusinessCreateView(CreateView, FooterContextMixin):
     template_name = 'business_create.html'
     form_class = NewBusinessForm
     model = Business 
