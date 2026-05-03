@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.urls import reverse_lazy
 from django.views import View
 from django.views.generic import (
     TemplateView,
@@ -27,17 +28,17 @@ class BusinessCreateView(CreateView, FeaturedBusinessListContextMixin, CategoryC
     template_name = 'business_create.html'
     form_class = NewBusinessForm
     model = Business 
+    success_url = reverse_lazy('home_urlpattern')
 
     def get(self, request, *args, **kwargs):
         form = NewBusinessForm()
         return super().get(request, kwargs)
         
-    
     def post(self, request, *args, **kwargs):
         form = NewBusinessForm(request.POST)
-        print(f"Welcome to the Business Create Space. \n ")
-        print(f"Args Passed: {args}\n")
-        print(f"Args Passed: {kwargs}\n")
+        if form.is_valid():
+            form.save()
+        return super().post(request, kwargs)
         
 
 
