@@ -11,12 +11,20 @@ body {
 .form-field-wrapper {
 
     /* Let's set default appearance on form elements */
-    & input , textarea , select{
+    & input , textarea , select {
         background-color: theme('colors.grey');
         padding: 1rem;
         border-radius: 0.5rem;
     }
+
+    /* Change the border colors of forms elements with an error */ 
+    &:has(.field-error){
+        & input , textarea , select {
+            border: 1.5px solid theme('colors.red.500');
+        }
+    }
 }
+
 @layer utilities {
     /* Creating a custom no-scrollbar utility */
     .no-scrollbar::-webkit-scrollbar {

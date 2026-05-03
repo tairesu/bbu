@@ -14,7 +14,8 @@ module.exports = {
         'orange': '#e2642f',
         'lightorange': '#ff9967',
         'black': '#3b4647',
-        'darkteal': '#007080'
+        'darkteal': '#007080',
+        'error': 'red',
       },
       spacing: {
         '2xs': `${(1/1.23)/1.23/1.23}rem`,
