@@ -3,8 +3,13 @@
 {% block content %}
     <!-- Add Business Section-->
     <section class=" gap-8 flex flex-col justify-start landscape:max-md:mt-[0]">
-         
-        {% include active_form %}
-
+        
+        <form action="" method="POST" class="flex flex-col gap-6 ">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit" class="mt-4 rounded-xl flex justify-center items-center  p-4 py-6 border-2 border-grey from-darkteal to-greninja bg-gradient-to-tr text-white group transition-all duration-200 hover:border-white text-base md:text-lg font-bold ">
+                Continue              
+            </button>
+        </form>
     </section>
 {% endblock %}
