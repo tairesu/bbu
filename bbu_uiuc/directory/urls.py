@@ -14,6 +14,7 @@ Including another URLconf
 
 from django.urls import path
 from directory.views import (
+    BusinessDetailView,
     LandingPageView,
     AboutView,
     BusinessCreateView,
@@ -21,6 +22,7 @@ from directory.views import (
 urlpatterns = [
     path('', LandingPageView.as_view(), name="home_urlpattern"),
     path('business/new', BusinessCreateView.as_view(), name="new_business_urlpattern"),
+    path('business/detail/<int:pk>', BusinessDetailView.as_view(), name="business_detail_urlpattern"),
     path('about/', AboutView.as_view(), name="about_urlpattern")
 ]
 

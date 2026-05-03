@@ -3,7 +3,8 @@ from django.urls import reverse_lazy
 from django.views import View
 from django.views.generic import (
     TemplateView,
-    CreateView
+    CreateView,
+    DetailView,
 
 )
 from directory.forms import (
@@ -28,3 +29,7 @@ class BusinessCreateView(CreateView, FooterContextMixin):
     form_class = NewBusinessForm
     model = Business 
     success_url = reverse_lazy('home_urlpattern')  
+
+class BusinessDetailView(DetailView, FooterContextMixin):
+    model = Business
+    template_name = 'business_detail.html'

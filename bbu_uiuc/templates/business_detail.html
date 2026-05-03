@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% now "Y-m-d H:i" as tz %}
+{% block content %}
+    <!-- Business Detail Section-->
+    <section class=" gap-9 flex flex-col justify-start landscape:max-md:mt-[0]">
+        
+         <!-- Subheader Header-->
+        <h2 class="text-3xl font-bold text-greninja md:text-3xl *:capitalize leading-12">
+            <span class="text-black">{{ business.name }}</span>
+        </h2>
+        <!-- Div for custom Gapping-->
+        <div class="flex flex-col gap-4">
+           
+            <!-- Text Paragraphs-->
+            <div class="flex flex-col gap-6">
+                <p class="leading-7 text-lg">
+                    The idea for the platform began inside a student
+                    GroupMe called “The BlackSideIllini” (created by
+                    Starr & Daniel) where students shared resources,
+                    asked questions, and helped each other find
+                    services around campus.
+                </p>
+                <p class="leading-7  text-lg">
+                    When someone asked for a barber, hairstylist,
+                    photographer, or other service, the answers
+                    often came quickly—but they were buried within
+                    thousands of messages. For business owners to
+                    secure the opportunity, they had to see the
+                    message immediately and jump in before the
+                    conversation moved on.
+                </p>
+                <p class="leading-7  text-lg">
+                    But many of those business owners were
+                    students themselves</p>
+                <p class="leading-7  text-lg">
+                    Ty, the founder of the platform, saw the same
+                    pattern happen over and over again. Great
+                    businesses existed within the community, but
+                    visibility depended on timing, connections, and
+                    luck.
+                </p>
+                <p class="leading-7  text-lg">
+                    In February 2025, Ty decided to build a solution.
+                    He released a video on Instagram debuting the
+                    first version of BBUIUC, a simple directory
+                    designed to make these businesses easier to
+                    discover.
+                </p>
+                <p class="leading-7  text-lg">
+                    The first version was built by writing HTML and
+                    JavaScript directly into a content block on
+                    Hipolink. What started as a small experiment
+                    quickly spread through the community, with the
+                    video reaching over 5,000 views as students
+                    shared it and businesses began joining the
+                    directory.
+                </p>
+                <p class="leading-7  text-lg">
+                    What began as a response to a problem inside a
+                student group chat has grown into a platform
+                focused on one goal:
+                </p>
+                <p class="font-bold text-2xl leading-8">
+                    Making it easier for students to discover and
+                    support businesses within their community.
+                </p>
+            </div>
+        </div>
+         <a href="#" class="rounded-xl flex justify-center items-center  p-4 border-2 border-grey from-orange to-lightorange bg-gradient-to-tr text-white group transition-all duration-200 hover:border-white text-base md:text-lg font-bold ">
+            Add my Business                
+         </a>
+    </section>
+{% endblock %}
