@@ -28,7 +28,7 @@ class Business(models.Model):
     headline = models.CharField(max_length=100)
     description = models.TextField(max_length=500)
     status = models.CharField(choices=STATUS_CHOICES, default='0')
-    email = models.EmailField(max_length=255, unique=True)
+    email = models.EmailField(max_length=255)
     phone = models.CharField(max_length=20, blank=True, validators=[
         RegexValidator(
             regex=r'^\+?1?\d{9,15}$',
@@ -43,6 +43,11 @@ class Business(models.Model):
 
     class Meta:
         verbose_name_plural = 'businesses'
+        constraints = [
+            UniqueConstraint(fields=['name'], name='unique_business_name'),
+            UniqueConstraint(fields=['email'], name='unique_business_email')
+
+        ]
 
     def __str__(self):
         return self.name
