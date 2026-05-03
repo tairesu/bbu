@@ -10,12 +10,11 @@ class NewBusinessForm(forms.ModelForm):
         model = Business
         fields = [
             'name',
-            'category',
-            'headline',
-            'description',
             'email',
+            'description',
+            'headline',
+            'category',
             'website',
             'instagram',
             'logo',
-            'address',
         ]
