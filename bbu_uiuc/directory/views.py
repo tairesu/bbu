@@ -28,17 +28,4 @@ class BusinessCreateView(CreateView, FeaturedBusinessListContextMixin, CategoryC
     template_name = 'business_create.html'
     form_class = NewBusinessForm
     model = Business 
-    success_url = reverse_lazy('home_urlpattern')
-
-    def get(self, request, *args, **kwargs):
-        form = NewBusinessForm()
-        return super().get(request, kwargs)
-        
-    def post(self, request, *args, **kwargs):
-        form = NewBusinessForm(request.POST)
-        if form.is_valid():
-            form.save()
-        return super().post(request, kwargs)
-        
-
-
+    success_url = reverse_lazy('home_urlpattern')  
