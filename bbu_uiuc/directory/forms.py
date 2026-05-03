@@ -8,4 +8,14 @@ class NewBusinessForm(forms.ModelForm):
 
     class Meta:
         model = Business
-        fields = '__all__'
+        fields = [
+            'name',
+            'category',
+            'headline',
+            'description',
+            'email',
+            'website',
+            'instagram',
+            'logo',
+            'address',
+        ]
