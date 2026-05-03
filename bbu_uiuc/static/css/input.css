@@ -4,12 +4,21 @@
 
 /* Set all body text to specified black */
 body {
-    c--tw-text-opacity: 1;
+    --tw-text-opacity: 1;
     color: rgb(59 70 71 / var(--tw-text-opacity, 1));
 }
+/* [&_input] utility didn't work with div.formFieldWrapper (may be old tailwind version)*/
+.form-field-wrapper {
 
-/* Creating a custom no-scrollbar utility */
+    /* Let's set default appearance on form elements */
+    & input , textarea , select{
+        background-color: theme('colors.grey');
+        padding: 1rem;
+        border-radius: 0.5rem;
+    }
+}
 @layer utilities {
+    /* Creating a custom no-scrollbar utility */
     .no-scrollbar::-webkit-scrollbar {
         display:none; /* Hide on Chrome */
     }
