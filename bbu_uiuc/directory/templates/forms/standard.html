@@ -2,10 +2,9 @@
 {% for field in form %}
     <div class="form-field-wrapper">
         <label for="{{ field.id_for_label }}" class="flex flex-col gap-2">
-            <span class="{% if field.field.required %}after:content-['*'] after:ml-1 after:text-orange {% endif %} relative">{{ field.html_name|capfirst }}</span>
+            <span class="{% if field.field.required %}after:content-['*'] after:ml-1 after:text-orange {% endif %} relative">{{ field.label|capfirst }}</span>
             
             {{ field }}
-            
             {% if field.errors %} 
                 <span class="field-error text-orange text-sm">{{ field.errors }}</span>
             {% endif %}
