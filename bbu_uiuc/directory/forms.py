@@ -3,9 +3,9 @@ from directory.models import (
     Business
 )
 
-
 class NewBusinessForm(forms.ModelForm):
-    
+    template_name = 'forms/standard.html'
+
     class Meta:
         model = Business
         fields = '__all__'
