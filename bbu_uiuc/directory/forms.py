@@ -18,3 +18,9 @@ class NewBusinessForm(forms.ModelForm):
             'instagram',
             'logo',
         ]
+        labels = {
+            'headline': 'Short Slogan ',
+        }
+        widgets = {
+            'description': forms.Textarea(attrs={'rows':3}),
+        }
