@@ -18,16 +18,16 @@ This file contains reuable code for a provided list of business
 
                     {% comment %} Show  All images attached to business{% endcomment %}
                     {% for image in business.images.all  %}
-                        <img src="/media/{{ image.image }}" alt="" class=" border aspect-square flex-shrink-0 snap-start snap-always w-full overflow-hidden duration-1000 transform-all group-hover:scale-105">
+                        <img src="/media/{{ image.image }}" alt="" class=" border aspect-square flex-shrink-0 snap-start snap-always w-full overflow-hidden duration-1000 transform-all group-hover:scale-105 object-cover object-center">
                     {% endfor %}
                 {% elif not business.images.all and business.logo %}
 
                     {% comment %} Show logo {% endcomment %}
-                    <img src="/media/{{ business.logo }}" alt="" class="rounded-tl-xl rounded-tr-xl border aspect-square flex-shrink-0 w-full">
+                    <img src="/media/{{ business.logo }}" alt="" class="border aspect-square flex-shrink-0 w-full ">
                 {% else %}
 
                     {% comment %} Show placeholder {% endcomment %}
-                    <span class="rounded-tl-xl rounded-tr-xl w-full aspect-square flex-shrink-0 bg-gray-300 text-black text-lg flex justify-center items-center"> Pictures of work coming soon</span>
+                    <span class="w-full aspect-square flex-shrink-0 bg-gray-300 text-black text-lg flex justify-center items-center"> Pictures of work coming soon</span>
                 {% endif %}
             </div>
             <!-- Business Action TraY-->  
