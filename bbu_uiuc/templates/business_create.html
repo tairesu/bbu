@@ -19,7 +19,7 @@
             <span class="w-full h-3 bg-grey"></span>
             <span class="w-full h-3 bg-grey"></span>
         </div> {% endcomment %}
-        <form action="" method="POST" class="flex flex-col gap-6 ">
+        <form action="" method="POST" class="flex flex-col gap-6 " enctype="multipart/form-data">
             {% csrf_token %}
             {{ form }}
             <button type="submit" class="mt-4 rounded-xl flex justify-center items-center  p-4 py-6 border-2 border-grey from-darkteal to-greninja bg-gradient-to-tr text-white group transition-all duration-200 hover:border-white text-base md:text-lg font-bold ">
