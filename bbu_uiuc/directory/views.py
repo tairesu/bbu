@@ -4,6 +4,7 @@ from django.views import View
 from django.views.generic import (
     TemplateView,
     CreateView,
+    ListView,
     DetailView,
 
 )
@@ -16,8 +17,15 @@ from bbu_uiuc.utils.plugins import (
 from directory.models import Business, BusinessImage
 
 
-class LandingPageView(TemplateView, FooterContextMixin):
+class LandingPageView(ListView, FooterContextMixin):
     template_name = 'home.html'
+    model = Business
+    context_object_name = "businesses_list"
+
+    # Only show approved businesses 
+    def get_queryset(self):
+        qs = super().get_queryset() 
+        return qs.filter(status=1)
 
 
 class AboutView(TemplateView, FooterContextMixin):
