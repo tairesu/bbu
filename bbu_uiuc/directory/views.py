@@ -27,8 +27,7 @@ class AboutView(TemplateView, FooterContextMixin):
 class BusinessCreateView(CreateView, FooterContextMixin):
     template_name = 'business_create.html'
     form_class = NewBusinessForm
-    model = Business 
-    success_url = reverse_lazy('home_urlpattern')  
+    model = Business   
 
 
 class BusinessDetailView(DetailView, FooterContextMixin):

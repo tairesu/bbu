@@ -2,7 +2,7 @@ from django.utils import timezone
 from django.db import models
 from django.core.validators import RegexValidator
 from django.db.models import UniqueConstraint
-
+from django.urls import reverse
 
 class Category(models.Model):
     STATUS_CHOICES = [
@@ -52,7 +52,10 @@ class Business(models.Model):
     def __str__(self):
         return self.name
 
+    def get_absolute_url(self):
+        return reverse("business_detail_urlpattern", kwargs={"pk": self.pk})
     
+
 class Support(models.Model):
     fingerprint = models.CharField(blank=False, max_length=64)
     business = models.ForeignKey(Business, on_delete=models.CASCADE, related_name="supports")
