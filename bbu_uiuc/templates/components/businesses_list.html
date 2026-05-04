@@ -9,16 +9,16 @@ This file contains reuable code for a provided list of business
 {% for business in businesses_list %} 
 
     <!-- Business Card Article-->     
-    <article class="w-full flex flex-col snap-start snap-always  cursor-pointer relative">
+    <a href="{{ business.get_absolute_url}}"  class="group w-full flex flex-col snap-start snap-always  cursor-pointer relative">
         <div class="relative">
             <!-- Business Img Slideshow -->
-            <div class="overflow-x-auto scroll-smooth snap-x snap-mandatory flex gap-2 relative ">
+            <div class="rounded-tl-xl rounded-tr-xl overflow-x-auto overflow-y-hidden scroll-smooth snap-x snap-mandatory flex gap-2 relative ">
                 
                 {% if business.images.all %}
 
                     {% comment %} Show  All images attached to business{% endcomment %}
                     {% for image in business.images.all  %}
-                        <img src="/media/{{ image.image }}" alt="" class="rounded-tl-xl rounded-tr-xl border aspect-square flex-shrink-0 snap-start snap-always w-full">
+                        <img src="/media/{{ image.image }}" alt="" class=" border aspect-square flex-shrink-0 snap-start snap-always w-full overflow-hidden duration-1000 transform-all group-hover:scale-105">
                     {% endfor %}
                 {% elif not business.images.all and business.logo %}
 
@@ -77,5 +77,5 @@ This file contains reuable code for a provided list of business
                 </div>
             </div>
         </div>
-    </article>
+    </a>
 {% endfor %}
