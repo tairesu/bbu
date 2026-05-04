@@ -17,12 +17,12 @@
                 </p>
             </div>
             
-            <!-- Business Imgs-->
-            <div class="max-h-50vh flex flex-row gap-base w-full overflow-x-auto scroll-smooth snap-x snap-mandatory ">
-                {% for image in images_list %}
-                    <img src="/media/{{ image.image }}" alt="" class="object-fill object-center bg-greninja rounded-xl aspect-square flex-shrink-0  snap-start snap-always relative cursor-pointer w-11/12 md:w-1/4 landscape:max-md:w-5/12">
-                {% endfor %}
-            </div>
+        </article>
+        <!-- Business Imgs-->
+        <article class="max-h-50vh flex flex-row gap-base w-full overflow-x-auto scroll-smooth snap-x snap-mandatory ">
+            {% for image in images_list %}
+                <img src="/media/{{ image.image }}" alt="" class="object-fill object-center bg-greninja rounded-xl aspect-square flex-shrink-0  snap-start snap-always relative cursor-pointer w-11/12 md:w-1/4 landscape:max-md:w-5/12">
+            {% endfor %}
         </article>
 
         <!-- Contact Article -->
