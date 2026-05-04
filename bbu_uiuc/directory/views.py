@@ -13,7 +13,7 @@ from directory.forms import (
 from bbu_uiuc.utils.plugins import (
     FooterContextMixin,
 )
-from directory.models import Business
+from directory.models import Business, BusinessImage
 
 
 class LandingPageView(TemplateView, FooterContextMixin):
@@ -30,6 +30,15 @@ class BusinessCreateView(CreateView, FooterContextMixin):
     model = Business 
     success_url = reverse_lazy('home_urlpattern')  
 
+
 class BusinessDetailView(DetailView, FooterContextMixin):
     model = Business
     template_name = 'business_detail.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        business_id = self.get_object().pk
+        context["images_list"] = BusinessImage.objects.filter(business_id=business_id)
+        return context
+    
+        
