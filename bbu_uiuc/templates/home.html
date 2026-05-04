@@ -17,6 +17,7 @@
             </svg>
         </div>
     </section>
+    
     <!-- Feautured Section-->
     <section>
         <h2 class="mb-2xl text-2xl font-bold text-greninja md:text-3xl">
@@ -24,7 +25,7 @@
              <span class="text-black">Businesses</span>
         </h2>
         <!-- Featured Businesses-->
-        <div class="*:w-5/6 *:flex-shrink-0 flex flex-row gap-base w-full overflow-x-auto scroll-smooth snap-x snap-mandatory md:overflow-hidden md:grid md:gap-lg md:grid-cols-[1fr_1fr] lg:grid-cols-[1fr_1fr_1fr]">
+        <div class="*:w-11/12 *:flex-shrink-0 flex flex-row gap-base w-full overflow-x-auto scroll-smooth snap-x snap-mandatory md:overflow-hidden md:grid md:gap-lg md:grid-cols-[1fr_1fr] lg:grid-cols-[1fr_1fr_1fr]">
             {% include 'components/businesses_list.html' with businesses_list=featured_business_list %}
            {% comment %}  <article class="flex-shrink-0 w-11/12 flex flex-col snap-start snap-always relative cursor-pointer landscape:max-md:w-5/12 md:w-full">
                 
@@ -104,6 +105,7 @@
         </div>
         
     </section>
+
     <!-- BusinessListings Section-->
     <section class="flex flex-col gap-2xl">
 
