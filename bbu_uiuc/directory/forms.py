@@ -14,6 +14,7 @@ class NewBusinessForm(forms.ModelForm):
             'description',
             'headline',
             'category',
+            'phone',
             'website',
             'instagram',
             'logo',
